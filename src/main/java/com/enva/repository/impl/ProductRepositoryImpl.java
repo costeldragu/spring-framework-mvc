@@ -4,6 +4,7 @@ import com.enva.model.Product;
 import com.enva.repository.ProductRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,8 +44,12 @@ public class ProductRepositoryImpl implements ProductRepository {
         }
         return false;
     }
+    @Override
+    public  List<Product> getAllProducts() {
+      return new ArrayList<>(productsTable.values());
+    }
 
    private synchronized Long getNextId() {
-        return ++lastId;
+        return lastId++;
    }
 }

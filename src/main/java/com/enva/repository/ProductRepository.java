@@ -14,4 +14,6 @@ public interface ProductRepository {
 
     boolean deleteProduct(Product product);
 
+    List<Product> getAllProducts();
+
 }

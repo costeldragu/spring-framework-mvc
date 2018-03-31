@@ -8,6 +8,9 @@ public class Product {
     private String name;
     private String description;
 
+    public Product() {
+    }
+
     private Double price;
 
     public Long getId() {
