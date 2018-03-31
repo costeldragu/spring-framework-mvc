@@ -1,17 +1,29 @@
 package com.enva.model;
 
+import java.util.UUID;
+
 public class Product {
-    private String UUID;
+    private Long Id;
+    private String category;
     private String name;
     private String description;
+
     private Double price;
 
-    public String getUUID() {
-        return UUID;
+    public Long getId() {
+        return Id;
     }
 
-    public void setUUID(String UUID) {
-        this.UUID = UUID;
+    public void setId(Long id) {
+        Id = id;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getName() {
@@ -38,25 +50,4 @@ public class Product {
         this.price = price;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Product product = (Product) o;
-
-        if (UUID != null ? !UUID.equals(product.UUID) : product.UUID != null) return false;
-        if (name != null ? !name.equals(product.name) : product.name != null) return false;
-        if (description != null ? !description.equals(product.description) : product.description != null) return false;
-        return price != null ? price.equals(product.price) : product.price == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = UUID != null ? UUID.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (price != null ? price.hashCode() : 0);
-        return result;
-    }
 }

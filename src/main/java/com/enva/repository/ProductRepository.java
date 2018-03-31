@@ -10,7 +10,7 @@ public interface ProductRepository {
 
     boolean saveProducts(List<Product> products);
 
-    Product getProduct(String productId);
+    Product getProduct(Long productId);
 
     boolean deleteProduct(Product product);
 

@@ -2,21 +2,24 @@ package com.enva.repository.impl;
 
 import com.enva.model.Product;
 import com.enva.repository.ProductRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+@Repository
 public class ProductRepositoryImpl implements ProductRepository {
-    private final Map<String, Product> productsTable = new HashMap<>();
+    private  static Long lastId = 1L;
+    private final Map<Long, Product> productsTable = new HashMap<>();
 
     @Override
     public Product saveProduct(Product product) {
-        if (product.getUUID() == null) {
-            product.setUUID(UUID.randomUUID().toString());
+        if (product.getId() == null) {
+            product.setId(getNextId());
         }
-        productsTable.put(product.getUUID(), product);
+        productsTable.put(product.getId(), product);
         return null;
     }
 
@@ -27,17 +30,21 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
-    public Product getProduct(String productId) {
+    public Product getProduct(Long productId) {
         return productsTable.get(productId);
     }
 
     @Override
     public boolean deleteProduct(Product product) {
-        Product exitingProduct = getProduct(product.getUUID());
+        Product exitingProduct = getProduct(product.getId());
         if (product.equals(exitingProduct)) {
-            productsTable.remove(product.getUUID());
+            productsTable.remove(product.getId());
             return true;
         }
         return false;
     }
+
+   private synchronized Long getNextId() {
+        return ++lastId;
+   }
 }
