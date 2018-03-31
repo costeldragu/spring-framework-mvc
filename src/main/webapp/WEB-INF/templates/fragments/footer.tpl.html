@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<!-- /.content-wrapper -->
+<footer  class="footer" th:fragment="footer">
+    <div class="container">
+        <span class="text-muted">Enva - Product list</span>
+    </div>
+</footer>
+
+<span th:fragment="footer_scripts" th:remove="tag">
+    <script th:src="@{/resources/js/lib/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/resources/js/lib/underscore-min.js}"></script>
+    <script th:src="@{/resources/js/lib/bootstrap.min.js}"></script>
+    <script th:src="@{/resources/js/lib/angular/angular.min.js}"></script>
+    <script th:src="@{/resources/js/lib/angular/angular-sanitize.min.js}"></script>
+    <script th:src="@{/resources/js/lib/angular/angular-resource.min.js}"></script>
+    <script th:src="@{/resources/js/app/app.js}"></script>
+    <script th:src="@{/resources/js/app/controller/ProductListController.js}"></script>
+    <script th:src="@{/resources/js/app/controller/UpdateProductController.js}"></script>
+
+</span>
+
+</body>
+</html>

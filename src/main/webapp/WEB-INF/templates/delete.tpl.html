@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" ng-app="productsApp">>
+<head>
+    <meta charset="UTF-8">
+    <title>Home controller</title>
+
+    <link th:replace="~{fragments/header :: header_head}" />
+</head>
+<body >
+<div th:replace="~{fragments/header :: header}">Header</div>
+<!-- Begin page content -->
+<main role="main" class="container">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm Delete</h5>
+
+            </div>
+            <div class="modal-body">
+                <p>You are sure you want to delete the product</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary">No</button>
+                <button type="button" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+    
+</main>
+
+<div th:replace="~{fragments/footer :: footer}">Footer</div>
+<div th:replace="~{fragments/footer :: footer_scripts}">Footer java script</div>
+</body>
+</html>

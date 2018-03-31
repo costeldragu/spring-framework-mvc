@@ -10,12 +10,18 @@
     <packaging>war</packaging>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <slf4j-version>1.7.25</slf4j-version>
         <logback-version>1.2.3</logback-version>
         <spring-version>5.0.4.RELEASE</spring-version>
         <servlet-version>4.0.0</servlet-version>
         <thymeleaf-version>3.0.9.RELEASE</thymeleaf-version>
         <thymeleaf-dialect-version>2.3.0</thymeleaf-dialect-version>
+        <jackson-version>2.9.4</jackson-version>
     </properties>
 
 
@@ -64,7 +70,25 @@
             <version>${logback-version}</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-version}</version>
+        </dependency>
     </dependencies>
 
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

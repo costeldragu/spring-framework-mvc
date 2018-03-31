@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" ng-app="productsApp">>
+<head>
+    <meta charset="UTF-8">
+    <title>Home controller</title>
+
+    <link th:replace="~{fragments/header :: header_head}"/>
+</head>
+<body>
+<div th:replace="~{fragments/header :: header}">Header</div>
+<!-- Begin page content -->
+<main role="main" class="container" ng-controller="UpdateProductController">
+    <h1 th:text="${info}">info</h1>
+    <form class="needs-validation" novalidate="">
+        <input type="hidden" id="productId" th:value="${product.id}">
+        <div class="mb-3">
+            <label for="category">Category</label>
+            <input type="text" class="form-control" ng-model="product.category" id="Category" th:value="${product.category}" placeholder="Enter the category name" required="">
+        </div>
+
+        <div class="mb-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name"  ng-model="product.name"  th:value="${product.name}" placeholder="Enter the product name" required="">
+        </div>
+
+
+        <div class="mb-3">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description"  ng-model="product.description"  th:value="${product.description}" placeholder="Enter the product description"
+                   required="">
+        </div>
+
+        <div class="mb-3">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="price"  ng-model="product.price"  th:value="${product.price}"  placeholder="Enter the product Price" required="">
+        </div>
+
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" ng-click="saveProduct(product,this)" type="submit">Save product</button>
+    </form>
+</main>
+
+<div th:replace="~{fragments/footer :: footer}">Footer</div>
+<div th:replace="~{fragments/footer :: footer_scripts}">Footer java script</div>
+</body>
+</html>
