@@ -1,4 +1,4 @@
 package com.enva.web.controllers;
 
-public class BaseController {
+abstract class BaseController {
 }

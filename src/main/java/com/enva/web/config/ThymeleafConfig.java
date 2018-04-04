@@ -4,6 +4,8 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.thymeleaf.dialect.IDialect;
 import org.thymeleaf.spring5.SpringTemplateEngine;
@@ -14,6 +16,8 @@ import org.thymeleaf.templatemode.TemplateMode;
 import java.util.HashSet;
 import java.util.Set;
 
+@Configuration
+@PropertySource("classpath:thymeleaf.properties")
 public class ThymeleafConfig {
 
     private ApplicationContext applicationContext;
