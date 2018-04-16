@@ -8,6 +8,8 @@ public interface ProductService {
 
     Product saveProduct(Product product);
 
+    Product updateProduct(Product product);
+
     boolean saveProducts(List<Product> products);
 
     Product getProduct(Long productId);

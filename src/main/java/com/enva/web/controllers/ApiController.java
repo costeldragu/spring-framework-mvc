@@ -33,7 +33,7 @@ public class ApiController extends BaseController {
 
     @RequestMapping(path = "/product/update", method = RequestMethod.POST)
     public Product updateProduct(@RequestBody Product product) {
-        return productService.saveProduct(product);
+        return productService.updateProduct(product);
     }
 
     @RequestMapping(path = "/product/{id}", method = RequestMethod.GET)

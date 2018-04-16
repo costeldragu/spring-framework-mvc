@@ -1,56 +1,106 @@
 package com.enva.model;
 
-import java.util.UUID;
-
 public class Product {
-    private Long Id;
+    private Integer id;
     private String category;
     private String name;
     private String description;
-
-    public Product() {
-    }
-
     private Double price;
 
-    public Long getId() {
-        return Id;
+    public Product() {
+
     }
 
-    public void setId(Long id) {
-        Id = id;
+    private Product(Builder builder) {
+        id = builder.id;
+        category = builder.category;
+        name = builder.name;
+        description = builder.description;
+        price = builder.price;
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public Product setId(Integer id) {
+        this.id = id;
+        return this;
     }
 
     public String getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public Product setCategory(String category) {
         this.category = category;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Product setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public Product setDescription(String description) {
         this.description = description;
+        return this;
     }
 
     public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public Product setPrice(Double price) {
         this.price = price;
+        return this;
+    }
+
+    public static class Builder {
+        private Integer id;
+        private String category;
+        private String name;
+        private String description;
+        private Double price;
+
+        public Builder setId(Integer id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setCategory(String category) {
+            this.category = category;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public Builder setPrice(Double price) {
+            this.price = price;
+            return this;
+        }
+
+
+        public Product build() {
+            return new Product(this);
+        }
     }
 
 }

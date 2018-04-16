@@ -40,7 +40,7 @@ public class HomeController extends BaseController {
     @RequestMapping(path = "/product/add", method = RequestMethod.GET)
     public String showProductAddPage(Model model) {
         model.addAttribute("info","Add product");
-        model.addAttribute("product", new Product());
+        model.addAttribute("product", new Product.Builder().build());
         return "update";
     }
 

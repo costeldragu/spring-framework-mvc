@@ -26,8 +26,18 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Product updateProduct(Product product) {
+        if (product.getId() != null) {
+            return productRepository.updateProduct(product);
+        } else {
+            return saveProduct(product);
+        }
+    }
+
+    @Override
     public boolean saveProducts(List<Product> products) {
-        return productRepository.saveProducts(products);
+        productRepository.saveProducts(products);
+        return true;
     }
 
     @Override

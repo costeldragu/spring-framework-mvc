@@ -1,5 +1,6 @@
 package com.enva.context;
 
+import com.enva.config.JPAConfig;
 import com.enva.config.JavaConfig;
 import com.enva.web.config.WebMvcConfig;
 import org.springframework.web.WebApplicationInitializer;
@@ -9,7 +10,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{JavaConfig.class};
+        return new Class[]{JavaConfig.class, JPAConfig.class};
     }
 
     @Override

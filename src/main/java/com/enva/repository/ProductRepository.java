@@ -8,7 +8,9 @@ public interface ProductRepository {
 
     Product saveProduct(Product product);
 
-    boolean saveProducts(List<Product> products);
+    Product updateProduct(Product product);
+
+    List<Product> saveProducts(List<Product> products);
 
     Product getProduct(Long productId);
 

@@ -1,0 +1,1 @@
+INSERT INTO product_table(`category`,`name`,`description`,`price`) VALUES('Category 1','TV LG','A TV LG description','10.0')
