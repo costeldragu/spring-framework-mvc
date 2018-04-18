@@ -46,6 +46,6 @@ public class JPAConfig {
         jdbcTemplate.execute(FileUtils.getFileContextFromResource(this.getClass(), "db/sql/create-db.sql"));
         jdbcTemplate.execute(FileUtils.getFileContextFromResource(this.getClass(), "db/sql/insert-data.sql"));
 
-        return new JdbcTemplate(dataSource);
+        return jdbcTemplate;
     }
 }

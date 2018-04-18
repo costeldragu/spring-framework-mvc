@@ -22,7 +22,7 @@ public class ApiController extends BaseController {
         this.productService = productService;
     }
 
-    @RequestMapping(path = "products/all", method = RequestMethod.GET)
+    @RequestMapping(path = "products/all", method = RequestMethod.GET )
     List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
