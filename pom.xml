@@ -21,7 +21,7 @@
         <servlet-version>4.0.0</servlet-version>
         <thymeleaf-version>3.0.9.RELEASE</thymeleaf-version>
         <thymeleaf-dialect-version>2.3.0</thymeleaf-dialect-version>
-        <jackson-version>2.9.4</jackson-version>
+        <jackson-version>2.12.6.1</jackson-version>
         <dbh2.version>1.4.197</dbh2.version>
         <junit.version>4.12</junit.version>
         <mockito.version>1.9.5</mockito.version>
